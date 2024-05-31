@@ -1,0 +1,45 @@
+﻿@page "/AddStudent"
+@using BlazorApp.Data
+@using BlazorApp.Models
+@inject StudentRepository studentRepo
+@inject NavigationManager NavigationManager
+
+
+<h3>Add New Student</h3>
+<hr />
+
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Name" class="control-label"> Name</label>
+                <input for="Name" class="form-control" @bind="@obj.Name" />
+            </div>
+            <div class="form-group">
+                <label for="Department" class="control-label"> Designation</label>
+                <input for="Department" class="form-control" @bind="@obj.Department" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" @onclick="@CreateStudent" value="Save" />
+                <input type="button" class="btn btn-primary" @onclick="@Cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    StudentModel obj = new StudentModel();
+    protected async void CreateStudent()
+    {
+        await studentRepo.PostAsync(obj);
+        NavigationManager.NavigateTo("StudentsList");
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("StudentsList");
+    }
+}

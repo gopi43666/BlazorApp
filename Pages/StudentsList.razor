@@ -1,0 +1,62 @@
+﻿@page "/StudentsList"
+@using BlazorApp.Data
+@using BlazorApp.Models
+@inject StudentRepository studentRepo
+
+
+<NavLink class="nav-link" href="Addstudent">
+    <span class="oi oi-plus" aria-hidden="true">Add New student</span>
+</NavLink>
+
+<h1>Students List</h1>
+
+@if (StuObj is null)
+{
+    <p><em>Fetching Data...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student No</th>
+
+                <th>Name</th>
+
+                <th>Department</th>
+
+                <th colspan="2" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stu in StuObj)
+            {
+                <tr>
+                    <td>@stu.Id</td>
+                    <td>@stu.Name</td>
+                    <td>@stu.Department</td>
+                    <td>
+                        <a class="nav-link btn btn-outline-primary w-50" href="Edit/@stu.Id">
+                            <span class="oi oi-pencil" aria-hidden="true">Edit</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="nav-link btn btn-outline-danger w-50" href="Delete/@stu.Id">
+                            <span class="oi oi-trash" aria-hidden="true">Delete</span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    List<StudentModel> StuObj;
+
+    protected override async Task OnInitializedAsync()
+    {
+        StuObj = await Task.Run(() => studentRepo.GetAllStudents());
+    }
+}

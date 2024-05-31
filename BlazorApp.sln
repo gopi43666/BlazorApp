@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "BlazorApp.csproj", "{910BF9D4-A569-4E68-8DC3-B09E34055640}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Api", "..\Student.Api\Student.Api.csproj", "{C4458650-6F69-4889-8700-B11B24208705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpHandler", "..\HttpHandler\HttpHandler.csproj", "{8F78887B-BB7F-4C99-84DA-4CEC94445CD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{910BF9D4-A569-4E68-8DC3-B09E34055640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910BF9D4-A569-4E68-8DC3-B09E34055640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910BF9D4-A569-4E68-8DC3-B09E34055640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910BF9D4-A569-4E68-8DC3-B09E34055640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4458650-6F69-4889-8700-B11B24208705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4458650-6F69-4889-8700-B11B24208705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4458650-6F69-4889-8700-B11B24208705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4458650-6F69-4889-8700-B11B24208705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F78887B-BB7F-4C99-84DA-4CEC94445CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F78887B-BB7F-4C99-84DA-4CEC94445CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F78887B-BB7F-4C99-84DA-4CEC94445CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F78887B-BB7F-4C99-84DA-4CEC94445CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23217892-BA77-4F5D-B830-1ABFB93D6629}
+	EndGlobalSection
+EndGlobal
