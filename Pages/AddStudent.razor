@@ -9,14 +9,14 @@
 <hr />
 
 <form>
-    <div class="row">
+    <div class="row d-flex">
         <div class="col-md-8">
-            <div class="form-group">
-                <label for="Name" class="control-label"> Name</label>
+            <div class="form-group d-flex">
+                <label for="Name" class="control-label"> Name: </label>
                 <input for="Name" class="form-control" @bind="@obj.Name" />
             </div>
-            <div class="form-group">
-                <label for="Department" class="control-label"> Designation</label>
+            <div class="form-group d-flex mt-2">
+                <label for="Department" class="control-label"> Department: </label>
                 <input for="Department" class="form-control" @bind="@obj.Department" />
             </div>
         </div>
