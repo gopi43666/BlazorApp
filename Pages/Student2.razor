@@ -1,13 +1,19 @@
-﻿@page "/student2"
-@using BlazorApp.Models
+﻿@using BlazorApp.Models
 
+<h3>Student 2</h3>
 
-<p>@State?.MessageFromTeacher</p>
-<p>@State?.MessageFromStudent1</p>
+<p>Message from Teacher: @State?.MessageFromTeacher</p>
+<p>Message from Student 1: @State?.MessageFromStudent1</p>
+@* <input @bind="State.MessageFromStudent2" placeholder="Reply to Teacher" />
+<button class="btn btn-primary" @onclick="SendMessageToTeacher">Send Message to Teacher</button> *@
 
 @code {
+
     [CascadingParameter]
     public SharedState State { get; set; }
+
+    private void SendMessageToTeacher()
+    {
+        State.MessageFromStudent2 = "Hello from Student2!";
+    }
 }
-
-
