@@ -1,3 +1,13 @@
 ﻿@page "/student2"
+@using BlazorApp.Models
 
-<div>Student 2</div>
+
+<p>@State?.MessageFromTeacher</p>
+<p>@State?.MessageFromStudent1</p>
+
+@code {
+    [CascadingParameter]
+    public SharedState State { get; set; }
+}
+
+

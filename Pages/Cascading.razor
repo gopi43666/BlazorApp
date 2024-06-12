@@ -1,24 +1,14 @@
 ﻿@page "/cascading"
+@using BlazorApp.Models
 
-<div class="d-flex m-3">
-    <div class="d-flex flex-grow-1">
-        <h3>Teacher</h3>
-        <div class="form-group ps-5">
-            <label for="Student1" class="control-label">Mark for Student 1</label>
-            <input for="Student1" class="form-control" @bind="@UpdateStudent1" @bind:event="oninput" />
-        </div>
-        <div class="form-group ps-5">
-            <label for="Student2" class="control-label">Mark for Student 2</label>
-            <input for="Student2" class="form-control" @bind="@UpdateStudent2" @bind:event="oninput" />
-        </div>
-       
-    </div>
-</div>
-<Student1>
 
-</Student1>
+<CascadingValue Value="state">
+    <Teacher />
+    <Student1 />
+    <Student2/>
+</CascadingValue>
+
 @code {
-    public string UpdateStudent1 { get; set; } = "";
-
-    public string UpdateStudent2 { get; set; } = "";
+    private SharedState state = new SharedState();
 }
+

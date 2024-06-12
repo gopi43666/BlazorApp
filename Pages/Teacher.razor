@@ -1,0 +1,15 @@
+﻿@using BlazorApp.Models
+<h3>Teacher</h3>
+
+<button type="button" class="btn btn-primary" @onclick="SendMessage">Send Message to Students</button>
+
+@code {
+    [CascadingParameter]
+    public SharedState State { get; set; }
+
+    private void SendMessage()
+    {
+        State.MessageFromTeacher = "Hello from Teacher!";
+    }
+}
+

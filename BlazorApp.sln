@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "BlazorApp.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Api", "..\Student.Api\Student.Api.csproj", "{C4458650-6F69-4889-8700-B11B24208705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpHandler", "..\HttpHandler\HttpHandler.csproj", "{8F78887B-BB7F-4C99-84DA-4CEC94445CD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpHandler", "..\HttpHandler\HttpHandler.csproj", "{8F78887B-BB7F-4C99-84DA-4CEC94445CD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
