@@ -1,12 +1,20 @@
 ﻿@page "/cascading"
 @using BlazorApp.Models
+<div class="border border-1 p-3">
+<h3>Teacher</h3>
+<input class="form-control mb-2 col-4" @bind="messageToStudents" placeholder="Type a message for students" />
 
+<button type="button" class="btn btn-primary" @onclick="SendMessage">Send Message to Students</button>
+</div>
 <CascadingValue Value="state">
     <Teacher />
-    <Student1 />
-    <Student2 />
 </CascadingValue>
 
 @code {
     private SharedState state = new SharedState();
+    private string messageToStudents = "";
+    private void SendMessage()
+    {
+        state.MessageFromTeacher = messageToStudents;
+    }
 }
