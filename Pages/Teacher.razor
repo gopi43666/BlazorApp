@@ -1,19 +1,52 @@
-﻿@using BlazorApp.Models
+﻿@page "/teacher"
+@using BlazorApp.Models
 
 <h3>Teacher</h3>
 
-<input @bind="State.MessageFromTeacher" placeholder="Type a message" />
+<h3>Teacher</h3>
+<input class="form-control mb-2 col-4" @bind="messageToStudents" placeholder="Type a message for students" />
 
 <button type="button" class="btn btn-primary" @onclick="SendMessage">Send Message to Students</button>
 
+
+@* <input class="form-control mb-2 col-4" @bind="messageToStudent1" placeholder="Type a message to Student 1" />
+<input class="form-control mb-2 col-4" @bind="messageToStudent2" placeholder="Type a message to Student 2" />
+
+<button type="button" class="btn btn-primary" @onclick="SendMessage">Send Message to Students</button> *@
+
 @code {
-
     [CascadingParameter]
-    public SharedState State { get; set; }
-
+    public SharedState state { get; set; }
+    private string messageToStudents = "";
     private void SendMessage()
     {
-        // Optionally do something before sending
-        State.MessageFromTeacher = "Hello from Teacher!";
+        state.MessageFromTeacher = messageToStudents;        
     }
 }
+
+
+@* <h3>Teacher (Component 1)</h3>
+<InputText @bind-Value="messageToStudent1" />
+<button @onclick="SendMessageToStudent1">Send to Student 1</button>
+<Student1 @ref="student1" @bind-Message="messageToStudent1"></Student1>
+<InputText @bind-Value="messageToStudent2" />
+<Student2 @ref="student2" @bind-Message="messageToStudent2"></Student2>
+<button @onclick="SendMessageToStudent2">Send to Student 2</button>
+
+@code {
+    private Student1 student1;
+    private Student2 student2;
+
+    private string messageToStudent1;
+    private string messageToStudent2;
+
+    private void SendMessageToStudent1()
+    {
+        student1.ReceiveMessageFromComponent1(messageToStudent1);
+    }
+
+    private void SendMessageToStudent2()
+    {
+        student2.ReceiveMessageFromComponent1(messageToStudent2);
+    }
+} *@
