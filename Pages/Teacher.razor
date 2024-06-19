@@ -2,15 +2,24 @@
 @using BlazorApp.Models
 
 
-
+@* <p>@message</p> *@
 <CascadingValue Value="state">   
-    <Student1 />
+    <Student1 @* OnButtonClick="HandleChildButtonClick" *@ />
 </CascadingValue>
+
+
+
 @code {
     [CascadingParameter]
     public SharedState state { get; set; }
     private string messageToStudents = "";
-    
+    // private string message;
+
+    // private void HandleChildButtonClick(string arg)
+    // {
+       
+    //     message = arg;
+    // }
 }
 
 

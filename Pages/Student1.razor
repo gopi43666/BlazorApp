@@ -12,12 +12,18 @@
 <CascadingValue Value="state">
     <Student2 />
 </CascadingValue>
+@* <button @onclick="HandleButtonClick">Click me</button> *@
 @code {
     [CascadingParameter]
     public SharedState state { get; set; }
     private string messageToStudent2 = "";
+    // [Parameter] public EventCallback<string> OnButtonClick { get; set; }
     private void SendMessageToStudent2()
     {
         state.MessageFromStudent1 = messageToStudent2;
     }
+    // private async Task HandleButtonClick()
+    // {       
+    //     await OnButtonClick.InvokeAsync("Button clicked!");
+    // }
 }
